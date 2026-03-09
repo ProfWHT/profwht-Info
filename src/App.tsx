@@ -20,7 +20,8 @@ import {
   Instagram,
   Youtube,
   Send,
-  Music2
+  Music2,
+  Mail
 } from 'lucide-react';
 import { motion } from 'motion/react';
 
@@ -268,9 +269,15 @@ export default function App() {
               </div>
 
               <div className="p-8 rounded-3xl bg-emerald-500/10 border border-emerald-500/20 flex flex-col md:flex-row items-center justify-between gap-8">
-                <div>
-                  <div className="text-sm text-emerald-400 font-bold uppercase tracking-widest mb-1">Direct Line</div>
-                  <div className="text-2xl font-mono font-bold">{whatsappNumber}</div>
+                <div className="flex flex-col gap-4">
+                  <div>
+                    <div className="text-sm text-emerald-400 font-bold uppercase tracking-widest mb-1">Direct Line</div>
+                    <div className="text-2xl font-mono font-bold">{whatsappNumber}</div>
+                  </div>
+                  <div>
+                    <div className="text-sm text-emerald-400 font-bold uppercase tracking-widest mb-1">Support Email</div>
+                    <a href="mailto:WHT@ProfWHT.info" className="text-xl font-mono font-bold hover:text-emerald-400 transition-colors">WHT@ProfWHT.info</a>
+                  </div>
                 </div>
                 <a 
                   href={whatsappLink} 
@@ -319,6 +326,15 @@ export default function App() {
                   Taksid.com <ExternalLink size={14} />
                 </a>
               </div>
+              <div className="mt-6 flex items-center gap-3 text-zinc-400">
+                <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-emerald-400">
+                  <Mail size={18} />
+                </div>
+                <div>
+                  <div className="text-xs uppercase tracking-widest text-zinc-500 font-bold">Contact & Support</div>
+                  <a href="mailto:WHT@ProfWHT.info" className="text-white hover:text-emerald-400 transition-colors font-mono">WHT@ProfWHT.info</a>
+                </div>
+              </div>
             </div>
             
             <div>
@@ -359,6 +375,9 @@ export default function App() {
                 </a>
                 <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-zinc-400 hover:bg-emerald-500 hover:text-black transition-all" title="WhatsApp">
                   <MessageCircle size={20} />
+                </a>
+                <a href="mailto:WHT@ProfWHT.info" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-zinc-400 hover:bg-white hover:text-black transition-all" title="Email Support">
+                  <Mail size={20} />
                 </a>
               </div>
             </div>
