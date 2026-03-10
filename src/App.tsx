@@ -70,7 +70,7 @@ export default function App() {
           </a>
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400">
             <a href="#about" className="hover:text-white transition-colors">About</a>
-            <a href="#google-play" className="hover:text-white transition-colors">Google Play</a>
+            <a href="#google-play" className="hover:text-white transition-colors">Services</a>
             <a href="https://taksid.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-1">
               Portfolio <ExternalLink size={14} />
             </a>
@@ -241,10 +241,10 @@ export default function App() {
                 <span>PREMIUM SERVICE</span>
               </div>
               <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-                Google Play Developer Account <span className="text-emerald-400">✅</span>
+                Google Play Console <span className="text-emerald-400">Services</span>
               </h2>
               <p className="text-zinc-300 text-xl mb-8 leading-relaxed">
-                Get the best market price for your vintage developer accounts. Secure, fast, and 100% confidential. We provide high-quality, aged accounts ready for your next big app launch.
+                We provide high-quality Google Play Console accounts at a low price with a guarantee. Our service is suitable for developers, app publishers, and digital agencies who need a ready-made account for app publishing.
               </p>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
@@ -253,8 +253,26 @@ export default function App() {
                     <ShieldCheck size={16} />
                   </div>
                   <div>
-                    <h4 className="font-bold">100% Secure</h4>
-                    <p className="text-zinc-500 text-sm">Verified and safe transfer process</p>
+                    <h4 className="font-bold">Farming & Selling</h4>
+                    <p className="text-zinc-500 text-sm">Professional Google Play Console farming and selling service</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="mt-1 p-1 rounded-md bg-emerald-500/20 text-emerald-400">
+                    <Globe size={16} />
+                  </div>
+                  <div>
+                    <h4 className="font-bold">Publishing & Renting</h4>
+                    <p className="text-zinc-500 text-sm">Web view app publishing and renting service</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="mt-1 p-1 rounded-md bg-emerald-500/20 text-emerald-400">
+                    <CheckCircle2 size={16} />
+                  </div>
+                  <div>
+                    <h4 className="font-bold">High Quality</h4>
+                    <p className="text-zinc-500 text-sm">Ready-made accounts with 100% guarantee</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -262,34 +280,72 @@ export default function App() {
                     <Zap size={16} />
                   </div>
                   <div>
-                    <h4 className="font-bold">Fast Delivery</h4>
-                    <p className="text-zinc-500 text-sm">Get your account details instantly</p>
+                    <h4 className="font-bold">Low Price</h4>
+                    <p className="text-zinc-500 text-sm">Best market rates for developers and agencies</p>
                   </div>
                 </div>
               </div>
 
-              <div className="p-8 rounded-3xl bg-emerald-500/10 border border-emerald-500/20 flex flex-col md:flex-row items-center justify-between gap-8">
-                <div className="flex flex-col gap-4">
-                  <div>
-                    <div className="text-sm text-emerald-400 font-bold uppercase tracking-widest mb-1">Direct Line</div>
-                    <div className="text-2xl font-mono font-bold">{whatsappNumber}</div>
+              <div className="p-8 rounded-3xl bg-emerald-500/10 border border-emerald-500/20 flex flex-col lg:flex-row items-center justify-between gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full lg:w-auto">
+                  <div className="flex flex-col gap-4">
+                    <div>
+                      <div className="text-sm text-emerald-400 font-bold uppercase tracking-widest mb-1">WhatsApp</div>
+                      <div className="text-xl font-mono font-bold">{whatsappNumber}</div>
+                    </div>
+                    <div>
+                      <div className="text-sm text-emerald-400 font-bold uppercase tracking-widest mb-1">Support Email</div>
+                      <a href="mailto:WHT@ProfWHT.info" className="text-lg font-mono font-bold hover:text-emerald-400 transition-colors">WHT@ProfWHT.info</a>
+                    </div>
                   </div>
-                  <div>
-                    <div className="text-sm text-emerald-400 font-bold uppercase tracking-widest mb-1">Support Email</div>
-                    <a href="mailto:WHT@ProfWHT.info" className="text-xl font-mono font-bold hover:text-emerald-400 transition-colors">WHT@ProfWHT.info</a>
+                  <div className="flex flex-col gap-4">
+                    <div>
+                      <div className="text-sm text-emerald-400 font-bold uppercase tracking-widest mb-1">Telegram ID</div>
+                      <a href="https://t.me/profwht" target="_blank" rel="noopener noreferrer" className="text-xl font-mono font-bold hover:text-emerald-400 transition-colors">@profwht</a>
+                    </div>
+                    <div>
+                      <div className="text-sm text-emerald-400 font-bold uppercase tracking-widest mb-1">Telegram Group</div>
+                      <a href="https://t.me/profwhtservice" target="_blank" rel="noopener noreferrer" className="text-lg font-mono font-bold hover:text-emerald-400 transition-colors">@profwhtservice</a>
+                    </div>
                   </div>
                 </div>
                 <a 
-                  href={whatsappLink} 
+                  href="https://t.me/profwht" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-full md:w-auto flex items-center justify-center gap-3 bg-emerald-500 hover:bg-emerald-400 text-black font-black py-5 px-10 rounded-2xl transition-all transform hover:scale-105 shadow-[0_0_40px_rgba(16,185,129,0.4)] text-lg"
+                  className="w-full lg:w-auto flex items-center justify-center gap-3 bg-emerald-500 hover:bg-emerald-400 text-black font-black py-5 px-10 rounded-2xl transition-all transform hover:scale-105 shadow-[0_0_40px_rgba(16,185,129,0.4)] text-lg"
                 >
-                  <MessageCircle size={24} />
-                  GET ACCOUNT NOW
+                  <Send size={24} />
+                  CONTACT TELEGRAM
                 </a>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* WhatsApp Chat Section */}
+      <section className="py-12 px-6 bg-black border-t border-white/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8 p-8 rounded-3xl bg-emerald-500/5 border border-emerald-500/10">
+            <div className="flex items-center gap-6">
+              <div className="w-16 h-16 rounded-2xl bg-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
+                <MessageCircle size={32} />
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold mb-1">Chat on WhatsApp</h3>
+                <p className="text-zinc-500">Get instant support and consultation for your projects.</p>
+              </div>
+            </div>
+            <a 
+              href={whatsappLink} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="w-full md:w-auto flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold py-4 px-8 rounded-2xl transition-all transform hover:scale-105 shadow-[0_0_30px_rgba(37,211,102,0.2)]"
+            >
+              <MessageCircle size={20} />
+              START WHATSAPP CHAT
+            </a>
           </div>
         </div>
       </section>
@@ -361,7 +417,7 @@ export default function App() {
                 <a href="https://www.facebook.com/profwht" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-zinc-400 hover:bg-[#1877F2] hover:text-white transition-all" title="Facebook">
                   <Facebook size={20} />
                 </a>
-                <a href="https://TikTok.com/@profwht" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-zinc-400 hover:bg-black hover:text-white transition-all" title="TikTok">
+                <a href="https://tiktok.com/@prof.wht" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-zinc-400 hover:bg-black hover:text-white transition-all" title="TikTok">
                   <Music2 size={20} />
                 </a>
                 <a href="https://Instagram.com/Profwht" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-zinc-400 hover:bg-[#E4405F] hover:text-white transition-all" title="Instagram">
@@ -370,8 +426,11 @@ export default function App() {
                 <a href="https://Youtube.com/Profwht" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-zinc-400 hover:bg-[#FF0000] hover:text-white transition-all" title="YouTube">
                   <Youtube size={20} />
                 </a>
-                <a href="https://t.me/profwht" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-zinc-400 hover:bg-[#24A1DE] hover:text-white transition-all" title="Telegram">
+                <a href="https://t.me/profwht" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-zinc-400 hover:bg-[#24A1DE] hover:text-white transition-all" title="Telegram ID">
                   <Send size={20} />
+                </a>
+                <a href="https://t.me/profwhtservice" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-zinc-400 hover:bg-[#24A1DE] hover:text-white transition-all" title="Telegram Group">
+                  <Globe size={20} />
                 </a>
                 <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-zinc-400 hover:bg-emerald-500 hover:text-black transition-all" title="WhatsApp">
                   <MessageCircle size={20} />
