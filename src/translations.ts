@@ -14,7 +14,8 @@ export const translations = {
       name: 'Валид Хасан',
       surname: 'Таксид',
       description: 'Генеральный директор Dev Spark Soft Limited. Лицензированная ИТ-компания в США и Бангладеш, обслуживающая клиентов по всему миру со 100% гарантией возврата денег.',
-      whatsapp: 'Чат в WhatsApp'
+      whatsapp: 'Чат в WhatsApp',
+      getApp: 'Скачать в Google Play'
     },
     stats: {
       guarantee: '100% Гарантия',
@@ -91,7 +92,8 @@ export const translations = {
       name: 'Walid Hasan',
       surname: 'Taksid',
       description: 'CEO of Dev Spark Soft Limited. A Licensed IT Company in the USA & Bangladesh, serving clients worldwide with a 100% money-back guarantee.',
-      whatsapp: 'Chat on WhatsApp'
+      whatsapp: 'Chat on WhatsApp',
+      getApp: 'Get it on Google Play'
     },
     stats: {
       guarantee: '100% Guarantee',
@@ -168,7 +170,8 @@ export const translations = {
       name: '瓦利德·哈桑',
       surname: '塔克西德',
       description: 'Dev Spark Soft Limited 首席执行官。在美国和孟加拉国拥有执照的 IT 公司，为全球客户提供服务，并提供 100% 退款保证。',
-      whatsapp: 'WhatsApp 聊天'
+      whatsapp: 'WhatsApp 聊天',
+      getApp: '在 Google Play 上获取'
     },
     stats: {
       guarantee: '100% 保证',
@@ -245,7 +248,8 @@ export const translations = {
       name: 'ওয়ালিদ হাসান',
       surname: 'তাকসিদ',
       description: 'ডেভ স্পার্ক সফট লিমিটেডের সিইও। ইউএসএ এবং বাংলাদেশে একটি লাইসেন্সপ্রাপ্ত আইটি কোম্পানি, ১০০% মানি-ব্যাক গ্যারান্টি সহ বিশ্বব্যাপী গ্রাহকদের সেবা দিচ্ছে।',
-      whatsapp: 'হোয়াটসঅ্যাপে চ্যাট করুন'
+      whatsapp: 'হোয়াটসঅ্যাপে চ্যাট করুন',
+      getApp: 'গুগল প্লে-তে পান'
     },
     stats: {
       guarantee: '১০০% গ্যারান্টি',

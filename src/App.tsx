@@ -148,6 +148,9 @@ export default function App() {
               </AnimatePresence>
             </div>
 
+            <a href="https://play.google.com/store/apps/details?id=com.devsparksoft.wht" target="_blank" rel="noopener noreferrer" className="hidden sm:flex items-center gap-2 text-zinc-400 hover:text-emerald-400 transition-colors" title="Google Play">
+              <Play size={18} className="fill-current" />
+            </a>
             <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="hidden sm:flex bg-emerald-500 hover:bg-emerald-400 text-black px-4 py-2 rounded-full transition-all items-center gap-2 text-sm font-bold">
               <MessageCircle size={16} />
               {t.nav.contact}
@@ -253,6 +256,15 @@ export default function App() {
                     <Send size={24} />
                     <span>{t.googlePlay.contactTelegram}</span>
                   </a>
+                  <a 
+                    href="https://play.google.com/store/apps/details?id=com.devsparksoft.wht" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-3 bg-white/5 hover:bg-white/10 text-white border border-white/10 font-bold py-4 px-10 rounded-2xl transition-all transform hover:scale-105"
+                  >
+                    <Play size={24} className="text-emerald-400 fill-emerald-400" />
+                    <span>{t.hero.getApp}</span>
+                  </a>
                 </div>
               </div>
             </div>
@@ -309,6 +321,15 @@ export default function App() {
                 <MessageCircle className="animate-float" />
                 <span>{t.hero.whatsapp}</span>
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              </a>
+              <a 
+                href="https://play.google.com/store/apps/details?id=com.devsparksoft.wht" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="group relative flex items-center justify-center gap-3 bg-white/5 hover:bg-white/10 text-white border border-white/10 font-bold py-4 px-8 rounded-2xl transition-all transform hover:scale-105"
+              >
+                <Play size={20} className="text-emerald-400 fill-emerald-400" />
+                <span>{t.hero.getApp}</span>
               </a>
             </motion.div>
           </motion.div>
@@ -490,7 +511,7 @@ export default function App() {
 
             <div>
               <h4 className="font-bold mb-6 uppercase text-xs tracking-widest text-zinc-400">{t.footer.social}</h4>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-4 mb-8">
                 <a href="https://www.facebook.com/profwht" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-zinc-400 hover:bg-[#1877F2] hover:text-white transition-all" title="Facebook">
                   <Facebook size={20} />
                 </a>
@@ -516,6 +537,21 @@ export default function App() {
                   <Mail size={20} />
                 </a>
               </div>
+
+              <div className="mt-4">
+                <a 
+                  href="https://play.google.com/store/apps/details?id=com.devsparksoft.wht" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 bg-black border border-white/20 rounded-xl px-4 py-2 hover:bg-zinc-900 transition-all group"
+                >
+                  <Play size={28} className="text-emerald-400 fill-emerald-400 group-hover:scale-110 transition-transform" />
+                  <div className="flex flex-col items-start leading-tight">
+                    <span className="text-[10px] uppercase tracking-wider text-zinc-400 font-medium">GET IT ON</span>
+                    <span className="text-lg font-bold text-white">Google Play</span>
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
           
@@ -532,15 +568,25 @@ export default function App() {
         </div>
       </footer>
 
-      {/* Floating WhatsApp Button for Mobile */}
-      <a 
-        href={whatsappLink} 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="md:hidden fixed bottom-6 right-6 w-16 h-16 bg-emerald-500 rounded-full flex items-center justify-center text-black shadow-2xl z-50 animate-bounce"
-      >
-        <MessageCircle size={32} />
-      </a>
+      {/* Floating Buttons for Mobile */}
+      <div className="md:hidden fixed bottom-6 right-6 flex flex-col gap-4 z-50">
+        <a 
+          href="https://play.google.com/store/apps/details?id=com.devsparksoft.wht" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="w-16 h-16 bg-white text-black rounded-full flex items-center justify-center shadow-2xl animate-bounce"
+        >
+          <Play size={32} className="fill-emerald-500 text-emerald-500" />
+        </a>
+        <a 
+          href={whatsappLink} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="w-16 h-16 bg-emerald-500 rounded-full flex items-center justify-center text-black shadow-2xl"
+        >
+          <MessageCircle size={32} />
+        </a>
+      </div>
     </div>
   );
 }
