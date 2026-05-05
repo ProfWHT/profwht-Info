@@ -2,7 +2,7 @@
   "cleanUrls": true,
   "headers": [
     {
-      "source": "/sitemap.xml",
+      "source": "/(sitemap.xml|BingSiteAuth.xml)",
       "headers": [
         {
           "key": "Content-Type",
@@ -15,6 +15,10 @@
     {
       "source": "/sitemap.xml",
       "destination": "/sitemap.xml"
+    },
+    {
+      "source": "/BingSiteAuth.xml",
+      "destination": "/BingSiteAuth.xml"
     },
     {
       "source": "/robots.txt",
