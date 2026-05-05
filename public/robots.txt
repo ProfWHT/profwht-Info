@@ -1,9 +1,8 @@
 User-agent: *
 Allow: /
-Sitemap: https://profwht.info/sitemap.xml
 
-User-agent: Googlebot
-Allow: /
+# Standard Sitemap
+Sitemap: https://profwht.info/sitemap.xml
 
 User-agent: Yandex
 Allow: /
