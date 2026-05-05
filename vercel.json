@@ -9,12 +9,25 @@
           "value": "application/xml"
         }
       ]
+    },
+    {
+      "source": "/urls.txt",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain"
+        }
+      ]
     }
   ],
   "rewrites": [
     {
       "source": "/sitemap.xml",
       "destination": "/sitemap.xml"
+    },
+    {
+      "source": "/urls.txt",
+      "destination": "/urls.txt"
     },
     {
       "source": "/BingSiteAuth.xml",

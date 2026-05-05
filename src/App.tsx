@@ -89,8 +89,41 @@ export default function App() {
     if (metaDesc) {
       metaDesc.setAttribute('content', t.footer.desc);
     }
+
+    // Dynamic Canonical URL
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const currentPath = window.location.pathname === '/' ? '' : window.location.pathname;
+    canonical.setAttribute('href', `https://profwht.info${currentPath}`);
     
     document.documentElement.lang = lang;
+
+    // Handle Pathname to Section Mapping for SEO
+    const path = window.location.pathname.replace('/', '');
+    if (path) {
+      const sectionMapping: Record<string, string> = {
+        'about': 'about',
+        'services': 'services',
+        'google-play': 'google-play',
+        'accounts': 'accounts',
+        'aso': 'aso',
+        'contact': 'contact'
+      };
+      
+      const targetId = sectionMapping[path];
+      if (targetId) {
+        setTimeout(() => {
+          const element = document.getElementById(targetId);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 500);
+      }
+    }
   }, [lang, t]);
 
   const containerVariants = {
