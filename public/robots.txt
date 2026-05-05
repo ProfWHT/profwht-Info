@@ -2,6 +2,9 @@ User-agent: *
 Allow: /
 Sitemap: https://profwht.info/sitemap.xml
 
+User-agent: Googlebot
+Allow: /
+
 User-agent: Yandex
 Allow: /
 Host: profwht.info
