@@ -25,11 +25,47 @@ import {
   Languages,
   ChevronDown
 } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence, useInView } from 'motion/react';
 import { translations, Language } from './translations';
 
+function AnimatedNumber({ value, suffix = "", duration = 2000, live = false }: { value: number; suffix?: string; duration?: number; live?: boolean }) {
+  const [displayValue, setDisplayValue] = useState(0);
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    let startTime: number | null = null;
+    const step = (timestamp: number) => {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      setDisplayValue(Math.floor(progress * value));
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+    window.requestAnimationFrame(step);
+  }, [isInView, value, duration]);
+
+  // Live increment effect
+  useEffect(() => {
+    if (!live || displayValue < value) return;
+    
+    const interval = setInterval(() => {
+      if (Math.random() > 0.7) { // 30% chance to increment
+        setDisplayValue(prev => prev + 1);
+      }
+    }, 10000); // Check every 10 seconds
+
+    return () => clearInterval(interval);
+  }, [live, displayValue, value]);
+
+  return <span ref={ref}>{displayValue}{suffix}</span>;
+}
+
 export default function App() {
-  const [lang, setLang] = useState<Language>('ru');
+  const [lang, setLang] = useState<Language>('en');
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
   const t = translations[lang];
 
@@ -41,13 +77,13 @@ export default function App() {
 
   // Dynamic SEO Update
   useEffect(() => {
-    document.title = lang === 'ru' 
-      ? "Купить Аккаунт Google Play Console | Продажа и Аренда | ProfWHT"
-      : lang === 'en'
-      ? "Buy Google Play Console Account | Sale & Rent | ProfWHT"
+    document.title = lang === 'en'
+      ? "ProfWHT-ASO Web App and App Publishing"
+      : lang === 'ru' 
+      ? "ProfWHT-ASO | Разработка и публикация приложений"
       : lang === 'zh'
-      ? "购买 Google Play Console 帐户 | 销售与租赁 | ProfWHT"
-      : "গুগল প্লে কনসোল অ্যাকাউন্ট কিনুন | বিক্রয় এবং ভাড়া | ProfWHT";
+      ? "ProfWHT-ASO | Web 应用程序和应用发布"
+      : "ProfWHT-ASO | ওয়েব অ্যাপ এবং অ্যাপ পাবলিশিং";
     
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
@@ -232,7 +268,7 @@ export default function App() {
                     </div>
                     <div>
                       <div className="text-sm text-emerald-400 font-bold uppercase tracking-widest mb-1">{t.googlePlay.email}</div>
-                      <a href="mailto:WHT@ProfWHT.info" className="text-lg font-mono font-bold hover:text-emerald-400 transition-colors">WHT@ProfWHT.info</a>
+                      <a href="mailto:taksidwalid150@gmail.com" className="text-lg font-mono font-bold hover:text-emerald-400 transition-colors">taksidwalid150@gmail.com</a>
                     </div>
                   </div>
                   <div className="flex flex-col gap-4">
@@ -337,35 +373,67 @@ export default function App() {
       </section>
 
       {/* Stats/Highlight Section */}
-      <section className="py-12 px-6 border-y border-white/5 bg-white/[0.02]">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="flex items-center gap-4 p-6">
-            <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400">
-              <ShieldCheck size={24} />
+      <section className="py-16 px-6 border-y border-white/5 bg-white/[0.02]">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-col items-center text-center gap-4 p-8 glass rounded-3xl border border-white/5 hover:border-emerald-500/30 transition-all duration-500 group"
+          >
+            <div className="w-16 h-16 rounded-2xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition-transform">
+              <ShieldCheck size={32} />
             </div>
             <div>
-              <h3 className="font-bold text-lg">{t.stats.guarantee}</h3>
+              <div className="text-4xl font-display font-bold mb-1 text-white">
+                <AnimatedNumber value={98} suffix="+" />
+              </div>
+              <div className="text-emerald-400 font-bold text-sm uppercase tracking-widest mb-1">{t.stats.guarantee}</div>
               <p className="text-zinc-500 text-sm">{t.stats.guaranteeDesc}</p>
             </div>
-          </div>
-          <div className="flex items-center gap-4 p-6">
-            <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400">
-              <Globe size={24} />
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="flex flex-col items-center text-center gap-4 p-8 glass rounded-3xl border border-white/5 hover:border-blue-500/30 transition-all duration-500 group"
+          >
+            <div className="w-16 h-16 rounded-2xl bg-blue-500/10 flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
+              <Play size={32} />
             </div>
             <div>
-              <h3 className="font-bold text-lg">{t.stats.global}</h3>
+              <div className="text-4xl font-display font-bold mb-1 text-white">
+                <AnimatedNumber value={1500} suffix="+" />
+              </div>
+              <div className="text-blue-400 font-bold text-sm uppercase tracking-widest mb-1">{t.stats.global}</div>
               <p className="text-zinc-500 text-sm">{t.stats.globalDesc}</p>
             </div>
-          </div>
-          <div className="flex items-center gap-4 p-6">
-            <div className="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400">
-              <GraduationCap size={24} />
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="flex flex-col items-center text-center gap-4 p-8 glass rounded-3xl border border-white/5 hover:border-purple-500/30 transition-all duration-500 group relative"
+          >
+            <div className="absolute top-4 right-4 flex items-center gap-1 bg-emerald-500/20 text-emerald-400 text-[10px] font-black px-2 py-0.5 rounded-full border border-emerald-500/20 animate-pulse">
+              <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+              LIVE
+            </div>
+            <div className="w-16 h-16 rounded-2xl bg-purple-500/10 flex items-center justify-center text-purple-400 group-hover:scale-110 transition-transform">
+              <Briefcase size={32} />
             </div>
             <div>
-              <h3 className="font-bold text-lg">{t.stats.study}</h3>
+              <div className="text-4xl font-display font-bold mb-1 text-white">
+                <AnimatedNumber value={500} suffix="+" live={true} />
+              </div>
+              <div className="text-purple-400 font-bold text-sm uppercase tracking-widest mb-1">{t.stats.study}</div>
               <p className="text-zinc-500 text-sm">{t.stats.studyDesc}</p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -486,7 +554,7 @@ export default function App() {
                 </div>
                 <div>
                   <div className="text-xs uppercase tracking-widest text-zinc-500 font-bold">{t.footer.contactSupport}</div>
-                  <a href="mailto:WHT@ProfWHT.info" className="text-white hover:text-emerald-400 transition-colors font-mono">WHT@ProfWHT.info</a>
+                  <a href="mailto:taksidwalid150@gmail.com" className="text-white hover:text-emerald-400 transition-colors font-mono">taksidwalid150@gmail.com</a>
                 </div>
               </div>
             </div>
@@ -533,7 +601,7 @@ export default function App() {
                 <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-zinc-400 hover:bg-emerald-500 hover:text-black transition-all" title="WhatsApp">
                   <MessageCircle size={20} />
                 </a>
-                <a href="mailto:WHT@ProfWHT.info" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-zinc-400 hover:bg-white hover:text-black transition-all" title="Email Support">
+                <a href="mailto:taksidwalid150@gmail.com" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-zinc-400 hover:bg-white hover:text-black transition-all" title="Email Support">
                   <Mail size={20} />
                 </a>
               </div>
