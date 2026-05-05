@@ -141,7 +141,7 @@ export default function App() {
             <div className="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400">
               <a href="#about" className="hover:text-white transition-colors">{t.nav.about}</a>
               <a href="#google-play" className="hover:text-white transition-colors">{t.nav.services}</a>
-              <a href="https://taksid.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-1">
+              <a href="https://profwht.info/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-1">
                 {t.nav.portfolio} <ExternalLink size={14} />
               </a>
             </div>
@@ -544,8 +544,8 @@ export default function App() {
                 <a href="https://DevSparkSoft.Org" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:text-emerald-300 font-medium flex items-center gap-1">
                   DevSparkSoft.Org <ExternalLink size={14} />
                 </a>
-                <a href="https://taksid.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:text-emerald-300 font-medium flex items-center gap-1">
-                  Taksid.com <ExternalLink size={14} />
+                <a href="https://profwht.info/" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:text-emerald-300 font-medium flex items-center gap-1">
+                  ProfWHT.info <ExternalLink size={14} />
                 </a>
               </div>
               <div className="mt-6 flex items-center gap-3 text-zinc-400">
